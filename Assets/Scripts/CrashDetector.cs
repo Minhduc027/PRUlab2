@@ -12,15 +12,8 @@ void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "ground")
         {
-            //Debug.Log("you bumped your head");
-            Invoke("ReloadScene", crashDelay);
+            LevelController.Instance.GameOver().SetActive(true);
+            Time.timeScale = 0;
         }
     }
-
-
-void ReloadScene()
-    {
-        SceneManager.LoadScene(0);
-    }
-
 }

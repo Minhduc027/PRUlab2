@@ -14,14 +14,8 @@ public class FinishLine : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Invoke("ReloadScene", finishDelay);
-            //Debug.Log("you finished!");
+            Time.timeScale = 0;
+            LevelController.Instance.GameOver().SetActive(true);
         }
     }
-
-    void ReloadScene()
-    {
-        SceneManager.LoadScene(0);
-    }
-
 }

@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ScoreCalculator : MonoBehaviour
 {
@@ -28,5 +25,8 @@ public class ScoreCalculator : MonoBehaviour
         var distance = Vector2.Distance(new Vector2(startLocation.x, 0), new Vector2(currentLocation.x,0));
         this.score = Mathf.RoundToInt(distance * 0.9f);
         this.scoreText.text = String.Format("Score: {0}", score.ToString());
+    }
+    public int Score () {
+        return this.score;
     }
 }

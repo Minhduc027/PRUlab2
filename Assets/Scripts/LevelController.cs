@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LevelController : Singleton<LevelController>
 {
-    [SerializeField] private ScoreCalculator scoreCaculator;
+    [SerializeField] private ScoreCalculator scoreCalculator;
+    [SerializeField] private GameObject gameOver;
+
+    public GameObject GameOver () {
+        return gameOver;
+    }
 
     public ScoreCalculator ScoreCalculator () {
-        return scoreCaculator;
+        return scoreCalculator;
     }
 }
