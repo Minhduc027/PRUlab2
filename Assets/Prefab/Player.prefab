@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b1e6f0dadec8f50993fe065248c69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  jumpForce: 100
   torqueAmount: 20
   playerRigidbody: {fileID: 29402007182455950}
   playerBoard: {fileID: 8771347432416840325}

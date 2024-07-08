@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool CheckGround() {
-        var rayHit = Physics2D.Raycast(playerBoard.bounds.center, Vector2.down, playerBoard.bounds.extents.y + .1f);
+        var rayHit = Physics2D.Raycast(playerBoard.bounds.center, Vector2.down, playerBoard.bounds.extents.y + .01f);
         return rayHit.collider != null;
     }
 
