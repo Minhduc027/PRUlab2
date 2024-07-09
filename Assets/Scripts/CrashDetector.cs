@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class CrashDetector : MonoBehaviour
 {
 
-[SerializeField] float crashDelay = 0.5f;
-
-void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] float crashDelay = 0.5f;
+    [SerializeField] private AudioClip crashSound;
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "ground")
         {
             LevelController.Instance.GameOver().SetActive(true);
+            GetComponent<AudioSource>().PlayOneShot(crashSound);
             Time.timeScale = 0;
         }
     }
