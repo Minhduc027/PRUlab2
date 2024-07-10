@@ -15,6 +15,6 @@ public class MenuScoreDisplay : MonoBehaviour
         int timeCount = DataLoader.Instance.TimeStamp;
         int minutes = Mathf.FloorToInt(timeCount / 60);
         int seconds = Mathf.FloorToInt(timeCount % 60);
-        time.text = String.Format("{0:00}:{1:00}",minutes,seconds);
+        time.text = String.Format("Max Time: {0:00}:{1:00}",minutes,seconds);
     }
 }

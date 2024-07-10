@@ -22,6 +22,8 @@ public class DataLoader : Singleton<DataLoader>
     public void SaveScore(int score, int timePlay) {
         playerScore.score.Value = score;
         playerScore.timeStamp.Value = timePlay;
+        highScore = score;
+        timeStamp = timePlay;
         playerScore.Save();
         SaveManager.Save();
     }
