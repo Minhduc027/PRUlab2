@@ -274,6 +274,9 @@ MonoBehaviour:
   torqueAmount: 20
   playerRigidbody: {fileID: 29402007182455950}
   playerBoard: {fileID: 8771347432416840325}
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &3816070130646640190
 MonoBehaviour:
   m_ObjectHideFlags: 0

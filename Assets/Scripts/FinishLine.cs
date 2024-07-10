@@ -14,9 +14,10 @@ public class FinishLine : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Time.timeScale = 0;
+            PlayerController.Instance.IsGameOver = true;
             GetComponent<AudioSource>().PlayOneShot(finishSound);
             LevelController.Instance.GameOver().SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

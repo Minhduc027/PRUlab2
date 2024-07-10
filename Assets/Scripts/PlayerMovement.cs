@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float torqueAmount;
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private CapsuleCollider2D playerBoard;
+    [SerializeField] private LayerMask layer;
 
     public void HandlePlayerMovement (PlayerMovementType movementType) {
+        Debug.DrawRay(playerBoard.bounds.center, Vector2.down * (playerBoard.bounds.extents.y + 0.1f));
         switch (movementType) {
             case PlayerMovementType.NONE:
             break;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
                 playerRigidbody.AddTorque(-torqueAmount);
             break;
         }
+        PlayerController.Instance.PlayerInput.PlayerMovementType = PlayerMovementType.NONE;
     }
 
     private void HandleJumpMovement() {
@@ -32,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool CheckGround() {
-        var rayHit = Physics2D.Raycast(playerBoard.bounds.center, Vector2.down, playerBoard.bounds.extents.y + .01f);
+        var rayHit = Physics2D.Raycast(playerBoard.bounds.center, Vector2.down, playerBoard.bounds.extents.y + 0.1f, layer);
         return rayHit.collider != null;
     }
 

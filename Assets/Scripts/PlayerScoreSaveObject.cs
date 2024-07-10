@@ -7,5 +7,6 @@ namespace Save
     public class PlayerScoreSaveObject : SaveObject
     {
         public SaveValue<int> score;
+        public SaveValue<int> timeStamp;
     }
 }
