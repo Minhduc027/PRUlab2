@@ -29,4 +29,8 @@ public class DataLoader : Singleton<DataLoader>
     {
         get { return highScore; }
     }
+    public int TimeStamp
+    {
+        get { return timeStamp; }
+    }
 }
