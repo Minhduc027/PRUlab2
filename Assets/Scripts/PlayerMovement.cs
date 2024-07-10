@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
                 playerRigidbody.AddTorque(-torqueAmount);
             break;
         }
+        PlayerController.Instance.PlayerInput.PlayerMovementType = PlayerMovementType.NONE;
     }
 
     private void HandleJumpMovement() {

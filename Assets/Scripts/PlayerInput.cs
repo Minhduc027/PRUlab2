@@ -24,9 +24,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space)) {
             movementType = PlayerMovementType.JUMP;
-            return;
         }
-        movementType = PlayerMovementType.NONE;
     }
-    public PlayerMovementType PlayerMovementType => movementType;
+    public PlayerMovementType PlayerMovementType {get => movementType; set => movementType = value; }
 }
